@@ -6,7 +6,17 @@ use OpenBoleto\BoletoAbstract;
 
 class BancoMock extends BoletoAbstract
 {
-    protected $carteiras = array('10');
+    protected $carteiras = ['10'];
+    /**
+     * @var string
+     */
+    protected $logoBanco = 'bb.jpg';
+
+    /**
+     * Código do banco
+     * @var string
+     */
+    protected $codigoBanco = '001';
 
     /**
      * Retorna o sequencial como nosso número
@@ -24,7 +34,7 @@ class BancoMock extends BoletoAbstract
      * @return string
      */
     public function getCampoLivre()
-	{
+    {
         return str_repeat('1', 25);
-	}
+    }
 }
